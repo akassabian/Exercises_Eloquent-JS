@@ -1,3 +1,4 @@
+// could improve error catching, make default step "smarter"
 function range(x, y = null, step = 1) {
   rangeArray = [];
   if (
