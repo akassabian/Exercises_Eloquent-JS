@@ -1,6 +1,6 @@
-function range(x, y) {
+function range(x, y = null) {
   rangeArray = [];
-  if (x === y) {
+  if (x === y || y === null) {
     rangeArray.push(x);
   } else if (x > y) {
     for (i = y; i <= x; i++) {
@@ -12,4 +12,12 @@ function range(x, y) {
     }
   }
   return rangeArray;
+}
+
+function sum(array) {
+  let total = 0;
+  for (let i of array) {
+    total += i;
+  }
+  return total;
 }
