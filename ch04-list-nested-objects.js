@@ -19,18 +19,21 @@ function arrayToList(array) {
   return list;
 }
 
-function listToArray(list) {
-  let array = [];
+function listToArray(list, array = []) {
+  //let array = array || [];
   for (let i = 0; i < Object.keys(list).length; i++) {
     array.push(list[Object.keys(list)[i]]);
   }
 
   for (let i of array) {
     //why did I need to add this condition to avoid prepend function from trying to conver null to object?
+    //add base case to break recursion once the object is iterated
     if (typeof i === "object" && i !== null) {
-      for (let x = 0; x < Object.keys(i).length; x++) {
-        array.push(i[Object.keys(i)[x]]);
-      }
+      //call listToArray(i);
+      listToArray(i, array);
+      //for (let x = 0; x < Object.keys(i).length; x++) {
+      //array.push(i[Object.keys(i)[x]]);
+      //}
       // remove old object from array
       if (typeof array[array.length - 3] === "object") {
         array = remove(array, array.length - 3);
