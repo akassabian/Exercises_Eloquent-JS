@@ -1,3 +1,4 @@
+// Exercise seems to ask for recursive versio of listToArray
 // arrayToList: with recursion?
 // listToArray: use recursion, maps/reducers. move if conditions, break into smaller functions?
 // refactor, increase readability
