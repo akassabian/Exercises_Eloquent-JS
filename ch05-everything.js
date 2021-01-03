@@ -1,5 +1,5 @@
 // every func with some and loop
-function every(array, test) {
+function everyLoopSome(array, test) {
     for (let i of array){
     let dummyArray = [i];
     if (dummyArray.some(test) === true){
@@ -21,23 +21,15 @@ function everyLoop(array, test) {
     return true;
 }
 
-// some function that truly relies on "some" func logic?
-function everySome(array, test) {
-    // if some of actual array !== some of requested array then false, otherwise true
-    // but how to construct requested array?
-    /**if (array.some(([...]) => {
-      return array
-  })){
-  
-  } else {
-  
-      return false;
-  }
-}**/
-}
+// every function that truly relies on "some" func logic
+function every(array, test) {
+  	if (array.some(test)){
+    	return false;
+    } else {
+    	return true;
+    }
 
-//console.log(characterScript(121));
-// → {name: "Latin", …}
+}
 
 console.log(every([1, 3, 5], n => n < 10));
 // → true
